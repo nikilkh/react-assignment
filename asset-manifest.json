@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.js": "/react-assignment/static/js/main.adc5799a.js",
+    "static/media/noresult.svg": "/react-assignment/static/media/noresult.542affae5f294edada9ed01c94eafef5.svg",
+    "static/media/blueSeat.svg": "/react-assignment/static/media/blueSeat.eeb673270d033c2768fef606ba79a5d4.svg",
+    "static/media/greySeat.svg": "/react-assignment/static/media/greySeat.8edddd1762b553664f72fb5718261015.svg",
+    "static/media/whiteSeat.svg": "/react-assignment/static/media/whiteSeat.70a31ed69b907d67f087a63538c97d18.svg",
+    "index.html": "/react-assignment/index.html",
+    "static/media/screen.svg": "/react-assignment/static/media/screen.e07e9836a73ce911d948509e3ec8b605.svg",
+    "main.adc5799a.js.map": "/react-assignment/static/js/main.adc5799a.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.adc5799a.js"
+  ]
+}
