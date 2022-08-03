@@ -122,11 +122,11 @@ export default function BookingPage() {
                         }}
                       >
                         {confirmedSeats.includes(item.row + seatNumber) ? (
-                          <img key={item.row + seatNumber} src={greySeat} alt="seat" />
+                          <img src={greySeat} alt="seat" />
                         ) : selectedSeats.includes(item.row + seatNumber) ? (
-                          <img key={item.row + seatNumber} src={blueSeat} alt="seat"/>
+                          <img src={blueSeat} alt="seat"/>
                         ) : (
-                          <img key={item.row + seatNumber} src={whiteSeat} alt="seat"/>
+                          <img src={whiteSeat} alt="seat"/>
                         )}
                       </SittingSeatStyle>
                     </>
