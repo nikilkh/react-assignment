@@ -109,6 +109,7 @@ export const MovieStyle = styled.div`
   }
 
   button {
+    all: unset;
     display: none;
     background-color: #352c9a;
     font-family: "Rubik", sans-serif;
