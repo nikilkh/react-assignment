@@ -7,9 +7,7 @@ import MoviesContainer from "./MoviesContainer";
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Main />}>
-        <Route path=":movie" element={<MoviesContainer />}></Route>
-      </Route>
+      <Route path="/" element={<Main />} />
 
       <Route path="/bookingpage" element={<BookingPage />}></Route>
     </Routes>
