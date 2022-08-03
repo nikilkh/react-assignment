@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import searchIcon from "../components/searchIcon.svg"
+import searchIcon from "../components/searchIcon.svg";
 
 export const LandPageStyle = styled.div`
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,34 +16,30 @@ export const HeaderStyle = styled.header`
   }
 `;
 export const SearchBoxStyle = styled.div`
-position: relative;
-input {
-  width: 300px;
-  height: 43px;
-  text-align: left;
-  padding-left: 16px;
-  /* background:  url(${searchIcon}) ;
+  position: relative;
+  input {
+    width: 300px;
+    height: 43px;
+    text-align: left;
+    padding-left: 16px;
+    /* background:  url(${searchIcon}) ;
   background-repeat: no-repeat;
   background-position: right;
   background-position: calc(100% - 20px) center; */
-  &:focus::placeholder {
-    color: white;
-}
-}
-button {
-  all: unset;
-  height: 50px;
-position: absolute;
-top: 0px;
-right: 0px;
-margin-right: 5px;
-  cursor: pointer;
- 
-  
-  
-}
-
-`
+    &:focus::placeholder {
+      color: white;
+    }
+  }
+  button {
+    all: unset;
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+`;
 
 export const MoviesContainerStyle = styled.div`
   display: flex;

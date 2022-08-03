@@ -65,7 +65,7 @@ export const LandPage = () => {
             handleSearchClick(e);
           }}
         >
-          <img src={searchIcon}></img>
+          <img src={searchIcon} alt="search icon"></img>
         </button>
       </SearchBoxStyle>
       {a.noResult ? <NoResult /> : <MoviesContainer />}

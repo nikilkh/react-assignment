@@ -15,7 +15,7 @@ import {
 } from "../styles/BookingPage.styled";
 import ConfirmBooking from "./ConfirmBooking";
 
-export default function BookingPage(props) {
+export default function BookingPage() {
 
   const [selectedSeats, setSelectedSeats] = useState([]);
   let [confirmedSeats, setConfirmedSeats] = useState([]);
@@ -91,7 +91,7 @@ export default function BookingPage(props) {
         }
       >
         <ScreenStyle>
-          <img src={screen} />
+          <img src={screen} alt="Screen this side"/>
         </ScreenStyle>
 
         <div style={{ margin: "auto" }}>
@@ -122,11 +122,11 @@ export default function BookingPage(props) {
                         }}
                       >
                         {confirmedSeats.includes(item.row + seatNumber) ? (
-                          <img key={item.row + seatNumber} src={greySeat} />
+                          <img key={item.row + seatNumber} src={greySeat} alt="seat" />
                         ) : selectedSeats.includes(item.row + seatNumber) ? (
-                          <img key={item.row + seatNumber} src={blueSeat} />
+                          <img key={item.row + seatNumber} src={blueSeat} alt="seat"/>
                         ) : (
-                          <img key={item.row + seatNumber} src={whiteSeat} />
+                          <img key={item.row + seatNumber} src={whiteSeat} alt="seat"/>
                         )}
                       </SittingSeatStyle>
                     </>
