@@ -7,6 +7,8 @@ import { useContext, useEffect } from "react";
 import Context from "./context";
 import MoviesContainer from "./MoviesContainer";
 import NoResult from "./NoResult";
+import searchIcon from "../components/searchIcon.svg";
+
 
 export const LandPage = () => {
   const a = useContext(Context);
@@ -63,7 +65,7 @@ export const LandPage = () => {
             handleSearchClick(e);
           }}
         >
-          Search
+          <img src={searchIcon}></img>
         </button>
       </SearchBoxStyle>
       {a.noResult ? <NoResult /> : <MoviesContainer />}

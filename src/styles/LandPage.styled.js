@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import searchIcon from "../components/searchIcon.svg"
 
 export const LandPageStyle = styled.div`
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik:wght@500;600&display=swap'); */
 
   display: flex;
   flex-direction: column;
@@ -16,7 +16,36 @@ export const HeaderStyle = styled.header`
     font-weight: 500;
   }
 `;
-export const SearchBoxStyle = styled.div``;
+export const SearchBoxStyle = styled.div`
+position: relative;
+input {
+  width: 300px;
+  height: 43px;
+  text-align: left;
+  padding-left: 16px;
+  /* background:  url(${searchIcon}) ;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-position: calc(100% - 20px) center; */
+  &:focus::placeholder {
+    color: white;
+}
+}
+button {
+  all: unset;
+  height: 50px;
+position: absolute;
+top: 0px;
+right: 0px;
+margin-right: 5px;
+  cursor: pointer;
+ 
+  
+  
+}
+
+`
+
 export const MoviesContainerStyle = styled.div`
   display: flex;
   flex-wrap: wrap;
