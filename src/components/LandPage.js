@@ -22,7 +22,7 @@ export const LandPage = () => {
   async function getMovie(url) {
     a.setNoResult(false);
     a.setShowMovies(false);
-    
+
     const res = await fetch(url);
     const data = await res.json();
     const result = data.results;
@@ -69,7 +69,7 @@ export const LandPage = () => {
           Search
         </button>
       </SearchBoxStyle>
-      {a.noResult ? (<NoResult></NoResult>) : <MoviesContainer></MoviesContainer>}
+      {a.noResult ? <NoResult /> : <MoviesContainer />}
     </LandPageStyle>
   );
 };

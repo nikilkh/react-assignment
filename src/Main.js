@@ -11,7 +11,7 @@ export default function Main() {
 
   return (
     <>
-    <Context.Provider
+      <Context.Provider
         value={{
           movies,
           setmovies,
@@ -22,13 +22,11 @@ export default function Main() {
           noResult,
           setNoResult,
           showBooking,
-          setShowBooking
+          setShowBooking,
         }}
       >
-<LandPage></LandPage>
-
+        <LandPage />
       </Context.Provider>
-      
     </>
   );
 }

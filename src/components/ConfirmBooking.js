@@ -20,9 +20,7 @@ export default function ConfirmBooking(props) {
 
       <div style={{ display: "flex" }}>
         <ModalImageStyle>
-          <img
-            src={IMG_URL + location.state.movie.poster_path}
-          ></img>
+          <img src={IMG_URL + location.state.movie.poster_path} />
         </ModalImageStyle>
 
         <PriceDetailsStyle>

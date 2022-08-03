@@ -63,7 +63,7 @@ export default function BookingPage(props) {
 
   function confirmBooking() {
     localStorage.setItem(location.state.movie.id, selectedSeats);
-    console.log((selectedSeats).toString());
+    console.log(selectedSeats.toString());
     setConfirmedSeats(
       localStorage.getItem(location.state.movie.id).split(",").join(", ")
     );
@@ -98,7 +98,7 @@ export default function BookingPage(props) {
         }
       >
         <ScreenStyle>
-          <img src={screen}></img>
+          <img src={screen} />
         </ScreenStyle>
 
         <div style={{ margin: "auto" }}>
@@ -129,14 +129,11 @@ export default function BookingPage(props) {
                         }}
                       >
                         {confirmedSeats.includes(item.row + seatNumber) ? (
-                          <img key={item.row + seatNumber} src={greySeat}></img>
+                          <img key={item.row + seatNumber} src={greySeat} />
                         ) : selectedSeats.includes(item.row + seatNumber) ? (
-                          <img key={item.row + seatNumber} src={blueSeat}></img>
+                          <img key={item.row + seatNumber} src={blueSeat} />
                         ) : (
-                          <img
-                            key={item.row + seatNumber}
-                            src={whiteSeat}
-                          ></img>
+                          <img key={item.row + seatNumber} src={whiteSeat} />
                         )}
                       </SittingSeatStyle>
                     </>
@@ -151,11 +148,11 @@ export default function BookingPage(props) {
       </BookingPageStyle>
 
       {modalVisible ? (
-        <ConfirmBooking closeModal={closeModal} selectedSeats={selectedSeats} confirmedSeats={confirmedSeats}>
-
-        </ConfirmBooking>
-
-        
+        <ConfirmBooking
+          closeModal={closeModal}
+          selectedSeats={selectedSeats}
+          confirmedSeats={confirmedSeats}
+        />
       ) : null}
     </>
   );

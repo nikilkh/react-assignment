@@ -7,7 +7,7 @@ const IMG_URL = "https://image.tmdb.org/t/p/w500";
 
 export default function MoviesContainer() {
   const a = useContext(Context);
-  
+
   return (
     <MoviesContainerStyle>
       {a.showMovies ? (
@@ -16,7 +16,7 @@ export default function MoviesContainer() {
             return (
               <>
                 <MovieStyle bg={IMG_URL + movie.poster_path}>
-                  <MovieCard movie={movie}></MovieCard>
+                  <MovieCard movie={movie} />
                 </MovieStyle>
               </>
             );
