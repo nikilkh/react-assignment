@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Context from "./components/context";
 import { LandPage } from "./components/LandPage";
 
 export default function Main() {
-  const [movies, setmovies] = useState([]);
-  const [input, setinput] = useState("");
+  const [movies, setMovies] = useState([]);
+  const [input, setInput] = useState("");
   const [showMovies, setShowMovies] = useState(true);
   const [noResult, setNoResult] = useState(false);
   const [showBooking, setShowBooking] = useState(false);
@@ -14,9 +14,9 @@ export default function Main() {
       <Context.Provider
         value={{
           movies,
-          setmovies,
+          setMovies,
           input,
-          setinput,
+          setInput,
           showMovies,
           setShowMovies,
           noResult,

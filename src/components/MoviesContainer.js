@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useParams } from "react-router-dom";
 import { MoviesContainerStyle, MovieStyle } from "../styles/LandPage.styled";
 import Context from "./context";
 import MovieCard from "./MovieCard";

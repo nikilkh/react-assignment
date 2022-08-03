@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import screen from "./screen.svg";
 import whiteSeat from "./whiteSeat.svg";
@@ -7,26 +7,20 @@ import blueSeat from "./blueSeat.svg";
 import {
   AllSeatsStyle,
   BookingPageStyle,
-  ConfirmModalStyle,
-  ModalCloseStyle,
   RowSeatStyle,
   ScreenStyle,
   SeatNumberStyle,
   SeatStyle,
   SittingSeatStyle,
 } from "../styles/BookingPage.styled";
-import Context from "./context";
-import { GlobalStyle } from "../styles/GLobal.styled";
 import ConfirmBooking from "./ConfirmBooking";
 
 export default function BookingPage(props) {
-  const IMG_URL = "https://image.tmdb.org/t/p/w500";
 
   const [selectedSeats, setSelectedSeats] = useState([]);
   let [confirmedSeats, setConfirmedSeats] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [bookingHomeVisible, setBookingHomeVisible] = useState(true);
-  let seatsForPriceCalc = [];
   const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   const seats = [
@@ -48,7 +42,6 @@ export default function BookingPage(props) {
     },
   ];
   let location = useLocation();
-  // console.log(typeof location.state.movie.id, typeof location.state.movie.poster_path);
 
   function handleSeatClick(id) {
     if (selectedSeats.includes(id)) {
@@ -57,7 +50,7 @@ export default function BookingPage(props) {
       });
       setSelectedSeats(newSelectedSeats);
     } else if (selectedSeats.length < 10) {
-      setSelectedSeats((selectedSeats) => [...selectedSeats, id]);
+      setSelectedSeats(() => [...selectedSeats, id]);
     } else alert("you can not select more than 10 seats");
   }
 

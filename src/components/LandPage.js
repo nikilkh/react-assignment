@@ -7,10 +7,8 @@ import { useContext, useEffect } from "react";
 import Context from "./context";
 import MoviesContainer from "./MoviesContainer";
 import NoResult from "./NoResult";
-import { useNavigate } from "react-router-dom";
 
 export const LandPage = () => {
-  let navigate = useNavigate();
   const a = useContext(Context);
 
   const API_KEY = "api_key=0decbb49ed9b3d0c6017d7721a14c106";
@@ -29,9 +27,8 @@ export const LandPage = () => {
     if (result.length === 0) {
       a.setNoResult(true);
     } else {
-      a.setmovies(result);
+      a.setMovies(result);
       a.setShowMovies(true);
-      navigate(`/${a.input}`);
     }
   }
 
@@ -58,7 +55,7 @@ export const LandPage = () => {
           placeholder="search your movie here"
           value={a.input}
           onChange={(e) => {
-            a.setinput(e.target.value);
+            a.setInput(e.target.value);
           }}
         ></input>
         <button
