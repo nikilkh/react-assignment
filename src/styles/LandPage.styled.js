@@ -57,7 +57,6 @@ export const MoviesContainerStyle = styled.div`
   column-gap: 75px;
   justify-content: center;
   align-items: center;
-  border: 4px solid black;
 `;
 
 export const MovieStyle = styled.div`
