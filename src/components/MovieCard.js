@@ -8,7 +8,7 @@ export default function MovieCard(props) {
     let navigate = useNavigate();
 
     function handleBookNow() {
-navigate("/bookingpage", {state: props})
+navigate(`/book/${props.movie.id}/${props.movie.title}}`, {state: props})
     }
 
   return (
