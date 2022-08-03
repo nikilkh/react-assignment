@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Context from "./components/context";
 import { LandPage } from "./components/LandPage";
 
-export default function App() {
+export default function Main() {
   const [movies, setmovies] = useState([]);
   const [input, setinput] = useState("");
   const [showMovies, setShowMovies] = useState(true);

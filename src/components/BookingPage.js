@@ -48,7 +48,7 @@ export default function BookingPage(props) {
     },
   ];
   let location = useLocation();
-  // console.log(location.state.movie.id, location.state.movie.poster_path);
+  // console.log(typeof location.state.movie.id, typeof location.state.movie.poster_path);
 
   function handleSeatClick(id) {
     if (selectedSeats.includes(id)) {
@@ -63,6 +63,7 @@ export default function BookingPage(props) {
 
   function confirmBooking() {
     localStorage.setItem(location.state.movie.id, selectedSeats);
+    console.log((selectedSeats).toString());
     setConfirmedSeats(
       localStorage.getItem(location.state.movie.id).split(",").join(", ")
     );

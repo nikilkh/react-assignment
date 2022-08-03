@@ -1,13 +1,13 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import App from "../App";
+import Main from "../Main";
 import BookingPage from "./BookingPage";
 import MoviesContainer from "./MoviesContainer";
 
-export default function Main() {
+export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<App />}>
+      <Route path="/" element={<Main></Main>}>
         <Route path=":movie" element={<MoviesContainer></MoviesContainer>}></Route>
         
       </Route>
