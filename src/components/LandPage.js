@@ -5,12 +5,12 @@ import {
 } from "../styles/LandPage.styled";
 import { useContext, useEffect } from "react";
 import Context from "./context";
-import MoviesContainer from "./MoviesContainer";
-import NoResult from "./NoResult";
+import { MoviesContainer } from "./MoviesContainer";
+import { NoResult } from "./NoResult";
 import searchIcon from "../components/searchIcon.svg";
 
 export const LandPage = () => {
-  const a = useContext(Context);
+  const states = useContext(Context);
 
   const API_KEY = "api_key=0decbb49ed9b3d0c6017d7721a14c106";
   const BASE_URL = "https://api.themoviedb.org/3";
@@ -18,9 +18,9 @@ export const LandPage = () => {
     BASE_URL + "/discover/movie?sort_by=popularity.desc&" + API_KEY;
   const searchURL = BASE_URL + "/search/movie?" + API_KEY + "&query=";
 
-  async function getMovie(url) {
-    a.setNoResult(false);
-    a.setShowMovies(false);
+  const getMovie = async (url) => {
+    states.setNoResult(false);
+    states.setShowMovies(false);
 
     try {
       const res = await fetch(url);
@@ -28,24 +28,24 @@ export const LandPage = () => {
       const result = data.results;
 
       if (result.length === 0) {
-        a.setNoResult(true);
+        states.setNoResult(true);
       } else {
-        a.setMovies(result);
-        a.setShowMovies(true);
+        states.setMovies(result);
+        states.setShowMovies(true);
       }
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
-  function handleSearchClick(e) {
+  const handleSearchClick = (e) => {
     e.preventDefault();
-    if (a.input.length === 0) {
+    if (states.input.length === 0) {
       getMovie(API_URL);
     } else {
-      getMovie(searchURL + a.input);
+      getMovie(searchURL + states.input);
     }
-  }
+  };
 
   useEffect(() => {
     getMovie(API_URL);
@@ -59,9 +59,9 @@ export const LandPage = () => {
       <SearchBoxStyle>
         <input
           placeholder="search your movie here"
-          value={a.input}
+          value={states.input}
           onChange={(e) => {
-            a.setInput(e.target.value);
+            states.setInput(e.target.value);
           }}
         ></input>
         <button
@@ -72,7 +72,7 @@ export const LandPage = () => {
           <img src={searchIcon} alt="search icon"></img>
         </button>
       </SearchBoxStyle>
-      {a.noResult ? <NoResult /> : <MoviesContainer />}
+      {states.noResult ? <NoResult /> : <MoviesContainer />}
     </LandPageStyle>
   );
 };

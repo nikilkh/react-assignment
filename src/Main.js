@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Context from "./components/context";
 import { LandPage } from "./components/LandPage";
 
-export default function Main() {
+export const Main = () => {
   const [movies, setMovies] = useState([]);
   const [input, setInput] = useState("");
   const [showMovies, setShowMovies] = useState(true);
@@ -29,4 +29,4 @@ export default function Main() {
       </Context.Provider>
     </>
   );
-}
+};

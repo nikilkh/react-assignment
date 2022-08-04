@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import searchIcon from "../components/searchIcon.svg";
 
 export const LandPageStyle = styled.div`
   display: flex;
@@ -22,10 +21,7 @@ export const SearchBoxStyle = styled.div`
     height: 43px;
     text-align: left;
     padding-left: 16px;
-    /* background:  url(${searchIcon}) ;
-  background-repeat: no-repeat;
-  background-position: right;
-  background-position: calc(100% - 20px) center; */
+
     &:focus::placeholder {
       color: white;
     }

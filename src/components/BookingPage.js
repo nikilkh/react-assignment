@@ -13,9 +13,9 @@ import {
   SeatStyle,
   SittingSeatStyle,
 } from "../styles/BookingPage.styled";
-import ConfirmBooking from "./ConfirmBooking";
+import {ConfirmBooking} from "./ConfirmBooking";
 
-export default function BookingPage() {
+export const BookingPage = () => {
   const [selectedSeats, setSelectedSeats] = useState([]);
   let [confirmedSeats, setConfirmedSeats] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
@@ -23,12 +23,11 @@ export default function BookingPage() {
 
   const seats = {
     row: ["A", "B", "C", "D"],
-   data : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    
+    data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   };
   let location = useLocation();
 
-  function handleSeatClick(id) {
+  const handleSeatClick = (id) => {
     if (selectedSeats.includes(id)) {
       let newSelectedSeats = selectedSeats.filter((seat) => {
         return id !== seat;
@@ -37,21 +36,21 @@ export default function BookingPage() {
     } else if (selectedSeats.length < 10) {
       setSelectedSeats(() => [...selectedSeats, id]);
     } else alert("you can not select more than 10 seats");
-  }
+  };
 
-  function confirmBooking() {
+  const confirmBooking = () => {
     localStorage.setItem(location.state.movie.id, selectedSeats);
     setConfirmedSeats(
       localStorage.getItem(location.state.movie.id).split(",").join(", ")
     );
     setModalVisible(true);
     setBookingHomeVisible(false);
-  }
+  };
 
-  function closeModal() {
+  const closeModal = () => {
     setModalVisible(false);
     setBookingHomeVisible(true);
-  }
+  };
 
   useEffect(() => {
     if (localStorage.getItem(location.state.movie.id) !== null) {
@@ -64,7 +63,6 @@ export default function BookingPage() {
     }
   }, []);
 
-  console.log(location.state.movie.id);
   return (
     <>
       <BookingPageStyle bookingHomeVisible={bookingHomeVisible}>
@@ -72,17 +70,15 @@ export default function BookingPage() {
           <img src={screen} alt="Screen this side" />
         </ScreenStyle>
 
-        <div>
-          <SeatNumberStyle>
-            {seats.data.map((num) => {
-              return (
-                <SeatStyle>
-                  <h1>{num}</h1>
-                </SeatStyle>
-              );
-            })}
-          </SeatNumberStyle>
-        </div>
+        <SeatNumberStyle>
+          {seats.data.map((num) => {
+            return (
+              <SeatStyle>
+                <h1>{num}</h1>
+              </SeatStyle>
+            );
+          })}
+        </SeatNumberStyle>
 
         <AllSeatsStyle>
           {seats.row.map((item) => {
@@ -127,4 +123,4 @@ export default function BookingPage() {
       ) : null}
     </>
   );
-}
+};

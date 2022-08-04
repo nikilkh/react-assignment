@@ -6,7 +6,7 @@ import {
   PriceDetailsStyle,
 } from "../styles/BookingPage.styled";
 
-export default function ConfirmBooking(props) {
+export const ConfirmBooking = (props) => {
   const IMG_URL = "https://image.tmdb.org/t/p/w500";
   let location = useLocation();
 
@@ -20,7 +20,10 @@ export default function ConfirmBooking(props) {
 
       <div style={{ display: "flex" }}>
         <ModalImageStyle>
-          <img src={IMG_URL + location.state.movie.poster_path} alt={`${location.state.movie.title}`} />
+          <img
+            src={IMG_URL + location.state.movie.poster_path}
+            alt={`${location.state.movie.title}`}
+          />
         </ModalImageStyle>
 
         <PriceDetailsStyle>
@@ -61,4 +64,4 @@ export default function ConfirmBooking(props) {
       </div>
     </ConfirmModalStyle>
   );
-}
+};

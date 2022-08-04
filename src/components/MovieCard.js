@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 
-export default function MovieCard(props) {
-    let navigate = useNavigate();
+export const MovieCard = (props) => {
+  let navigate = useNavigate();
 
-    function handleBookNow() {
-navigate(`/book/${props.movie.id}/${props.movie.title}}`, {state: props})
-    }
+  const handleBookNow = () => {
+    navigate(`/book/${props.movie.id}/${props.movie.title}}`, { state: props });
+  };
 
   return (
     <>
@@ -13,4 +13,4 @@ navigate(`/book/${props.movie.id}/${props.movie.title}}`, {state: props})
       <button onClick={handleBookNow}>Book Now</button>
     </>
   );
-}
+};
