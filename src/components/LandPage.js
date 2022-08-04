@@ -9,7 +9,6 @@ import MoviesContainer from "./MoviesContainer";
 import NoResult from "./NoResult";
 import searchIcon from "../components/searchIcon.svg";
 
-
 export const LandPage = () => {
   const a = useContext(Context);
 
@@ -22,10 +21,16 @@ export const LandPage = () => {
   async function getMovie(url) {
     a.setNoResult(false);
     a.setShowMovies(false);
+    let result;
+    let data;
+    try {
+      const res = await fetch(url);
+      data = await res.json();
+    } catch (error) {
+      console.log(error);
+    }
+    result = data.results;
 
-    const res = await fetch(url);
-    const data = await res.json();
-    const result = data.results;
     if (result.length === 0) {
       a.setNoResult(true);
     } else {
