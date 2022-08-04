@@ -16,7 +16,6 @@ import {
 import ConfirmBooking from "./ConfirmBooking";
 
 export default function BookingPage() {
-
   const [selectedSeats, setSelectedSeats] = useState([]);
   let [confirmedSeats, setConfirmedSeats] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
@@ -83,18 +82,12 @@ export default function BookingPage() {
   console.log(location.state.movie.id);
   return (
     <>
-      <BookingPageStyle
-        style={
-          bookingHomeVisible
-            ? { background: "white" }
-            : { background: "rgba(229, 229, 229, 0.6)", pointerEvents: "none" }
-        }
-      >
+      <BookingPageStyle bookingHomeVisible={bookingHomeVisible}>
         <ScreenStyle>
-          <img src={screen} alt="Screen this side"/>
+          <img src={screen} alt="Screen this side" />
         </ScreenStyle>
 
-        <div style={{ margin: "auto" }}>
+        <div>
           <SeatNumberStyle>
             {data.map((num) => {
               return (
@@ -124,9 +117,9 @@ export default function BookingPage() {
                         {confirmedSeats.includes(item.row + seatNumber) ? (
                           <img src={greySeat} alt="seat" />
                         ) : selectedSeats.includes(item.row + seatNumber) ? (
-                          <img src={blueSeat} alt="seat"/>
+                          <img src={blueSeat} alt="seat" />
                         ) : (
-                          <img src={whiteSeat} alt="seat"/>
+                          <img src={whiteSeat} alt="seat" />
                         )}
                       </SittingSeatStyle>
                     </>
