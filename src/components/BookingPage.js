@@ -20,26 +20,12 @@ export default function BookingPage() {
   let [confirmedSeats, setConfirmedSeats] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [bookingHomeVisible, setBookingHomeVisible] = useState(true);
-  const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  const seats = [
-    {
-      row: "A",
-      seat: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    },
-    {
-      row: "B",
-      seat: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    },
-    {
-      row: "C",
-      seat: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    },
-    {
-      row: "D",
-      seat: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    },
-  ];
+  const seats = {
+    row: ["A", "B", "C", "D"],
+   data : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    
+  };
   let location = useLocation();
 
   function handleSeatClick(id) {
@@ -55,7 +41,6 @@ export default function BookingPage() {
 
   function confirmBooking() {
     localStorage.setItem(location.state.movie.id, selectedSeats);
-    console.log(selectedSeats.toString());
     setConfirmedSeats(
       localStorage.getItem(location.state.movie.id).split(",").join(", ")
     );
@@ -74,7 +59,7 @@ export default function BookingPage() {
         localStorage.getItem(location.state.movie.id).split(",")
       );
       setConfirmedSeats(
-        localStorage.getItem(location.state.movie.id).split(",").join(",")
+        localStorage.getItem(location.state.movie.id).split(",").join("")
       );
     }
   }, []);
@@ -89,7 +74,7 @@ export default function BookingPage() {
 
         <div>
           <SeatNumberStyle>
-            {data.map((num) => {
+            {seats.data.map((num) => {
               return (
                 <SeatStyle>
                   <h1>{num}</h1>
@@ -100,23 +85,23 @@ export default function BookingPage() {
         </div>
 
         <AllSeatsStyle>
-          {seats.map((item) => {
+          {seats.row.map((item) => {
             return (
               <RowSeatStyle>
                 <div>
-                  <h1>{item.row}</h1>
+                  <h1>{item}</h1>
                 </div>
-                {item.seat.map((seatNumber) => {
+                {seats.data.map((seatNumber) => {
                   return (
                     <>
                       <SittingSeatStyle
                         onClick={() => {
-                          handleSeatClick(item.row + seatNumber);
+                          handleSeatClick(item + seatNumber);
                         }}
                       >
-                        {confirmedSeats.includes(item.row + seatNumber) ? (
+                        {confirmedSeats.includes(item + seatNumber) ? (
                           <img src={greySeat} alt="seat" />
-                        ) : selectedSeats.includes(item.row + seatNumber) ? (
+                        ) : selectedSeats.includes(item + seatNumber) ? (
                           <img src={blueSeat} alt="seat" />
                         ) : (
                           <img src={whiteSeat} alt="seat" />
