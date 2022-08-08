@@ -6,14 +6,16 @@ import greySeat from "./greySeat.svg";
 import blueSeat from "./blueSeat.svg";
 import {
   AllSeatsStyle,
+  BookingPageFlex,
   BookingPageStyle,
+  LetterSeatStyle,
   RowSeatStyle,
   ScreenStyle,
   SeatNumberStyle,
   SeatStyle,
-  SittingSeatStyle,
 } from "../styles/BookingPage.styled";
 import { ConfirmBooking } from "./ConfirmBooking";
+import { GlobalStyle } from "../styles/Global.styled";
 
 export const BookingPage = () => {
   const [selectedSeats, setSelectedSeats] = useState([]);
@@ -65,59 +67,62 @@ export const BookingPage = () => {
 
   return (
     <>
+      <GlobalStyle />
       <BookingPageStyle bookingHomeVisible={bookingHomeVisible}>
-        <ScreenStyle>
-          <img src={screen} alt="Screen this side" />
-        </ScreenStyle>
+        <BookingPageFlex>
+          <ScreenStyle>
+            <img src={screen} alt="Screen this side" />
+          </ScreenStyle>
 
-        <SeatNumberStyle>
-          {seats.data.map((num) => {
-            return (
-              <SeatStyle>
-                <h1>{num}</h1>
-              </SeatStyle>
-            );
-          })}
-        </SeatNumberStyle>
+          <SeatNumberStyle>
+            {seats.data.map((num) => {
+              return (
+                <SeatStyle>
+                  <h1>{num}</h1>
+                </SeatStyle>
+              );
+            })}
+          </SeatNumberStyle>
 
-        <AllSeatsStyle>
-          {seats.row.map((item) => {
-            return (
-              <RowSeatStyle>
-                <div>
-                  <h1>{item}</h1>
-                </div>
-                {seats.data.map((seatNumber) => {
-                  return (
-                    <>
-                      {confirmedSeats.includes(item + seatNumber) ? (
-                        <img src={greySeat} alt="seat" />
-                      ) : selectedSeats.includes(item + seatNumber) ? (
-                        <img
-                          onClick={() => {
-                            handleSeatClick(item + seatNumber);
-                          }}
-                          src={blueSeat}
-                          alt="seat"
-                        />
-                      ) : (
-                        <img
-                          onClick={() => {
-                            handleSeatClick(item + seatNumber);
-                          }}
-                          src={whiteSeat}
-                          alt="seat"
-                        />
-                      )}
-                    </>
-                  );
-                })}
-              </RowSeatStyle>
-            );
-          })}
-        </AllSeatsStyle>
+          <AllSeatsStyle>
+            {seats.row.map((item) => {
+              return (
+                <RowSeatStyle>
+                  <LetterSeatStyle>
+                    <h1>{item}</h1>
+                  </LetterSeatStyle>
+                  {seats.data.map((seatNumber) => {
+                    return (
+                      <>
+                        {confirmedSeats.includes(item + seatNumber) ? (
+                          <img src={greySeat} alt="seat" />
+                        ) : selectedSeats.includes(item + seatNumber) ? (
+                          <img
+                            onClick={() => {
+                              handleSeatClick(item + seatNumber);
+                            }}
+                            src={blueSeat}
+                            alt="seat"
+                          />
+                        ) : (
+                          <img
+                            onClick={() => {
+                              handleSeatClick(item + seatNumber);
+                            }}
+                            src={whiteSeat}
+                            alt="seat"
+                          />
+                        )}
+                      </>
+                    );
+                  })}
+                </RowSeatStyle>
+              );
+            })}
+          </AllSeatsStyle>
 
-        <button onClick={confirmBooking}>Confirm Booking</button>
+          <button onClick={confirmBooking}>Confirm Booking</button>
+        </BookingPageFlex>
       </BookingPageStyle>
 
       {modalVisible ? (

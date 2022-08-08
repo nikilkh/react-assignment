@@ -1,18 +1,23 @@
 import styled from "styled-components";
 
 export const BookingPageStyle = styled.div`
-  display: flex;
-  position: relative;
-  margin: auto;
-  width: max-content;
-  flex-direction: column;
+  width: 100%;
   background: ${(props) =>
     props.bookingHomeVisible ? "white" : "rgba(229, 229, 229, 0.6)"};
   pointer-events: ${(props) => (props.bookingHomeVisible ? "all" : "none")};
+`;
+
+export const BookingPageFlex = styled.div`
+  display: flex;
+  position: relative;
+  margin: auto;
+  width: 1440px;
+  height: 1024px;
+  flex-direction: column;
 
   button {
     margin: auto;
-    margin-top: 100px;
+    margin-top: 109px;
     width: 190px;
     height: 43px;
     background-color: #352c9a;
@@ -38,42 +43,39 @@ export const BookingPageStyle = styled.div`
 `;
 
 export const ScreenStyle = styled.div`
-  margin: auto;
+  margin-left: 171px;
   margin-top: 46px;
 `;
 export const SeatNumberStyle = styled.div`
   margin-top: 75px;
   display: flex;
-  justify-content: space-evenly;
-  margin-left: 50px;
-  column-gap: 30px;
+  justify-content: space-between;
+  margin-left: 294px;
+  margin-right: 204px;
 `;
 
 export const SeatStyle = styled.div`
-  height: 80px;
-  width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 export const AllSeatsStyle = styled.div`
-  margin: auto;
-  margin-top: 32px;
+  margin-top: 44px;
+  margin-left: 170px;
+  margin-right: 187px;
 `;
-
+export const LetterSeatStyle = styled.div`
+  margin-right: 66px;
+`;
 export const RowSeatStyle = styled.div`
   display: flex;
-  margin: auto;
-  column-gap: 30px;
 `;
-
-export const SittingSeatStyle = styled.div``;
 
 export const ConfirmModalStyle = styled.div`
   width: 640px;
   height: 578px;
-  position: absolute;
+  position: fixed;
   top: 179px;
   left: 600px;
   background-color: #ffffff;
