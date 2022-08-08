@@ -90,19 +90,25 @@ export const BookingPage = () => {
                 {seats.data.map((seatNumber) => {
                   return (
                     <>
-                        
-                      
-                        {confirmedSeats.includes(item + seatNumber) ? (
-                          <img src={greySeat} alt="seat" />
-                        ) : selectedSeats.includes(item + seatNumber) ? (
-                          <img onClick={() => {
+                      {confirmedSeats.includes(item + seatNumber) ? (
+                        <img src={greySeat} alt="seat" />
+                      ) : selectedSeats.includes(item + seatNumber) ? (
+                        <img
+                          onClick={() => {
                             handleSeatClick(item + seatNumber);
-                          }} src={blueSeat} alt="seat" />
-                        ) : (
-                          <img onClick={() => {
+                          }}
+                          src={blueSeat}
+                          alt="seat"
+                        />
+                      ) : (
+                        <img
+                          onClick={() => {
                             handleSeatClick(item + seatNumber);
-                          }} src={whiteSeat} alt="seat" />
-                        )}
+                          }}
+                          src={whiteSeat}
+                          alt="seat"
+                        />
+                      )}
                     </>
                   );
                 })}
