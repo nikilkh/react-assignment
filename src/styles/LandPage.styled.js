@@ -119,8 +119,8 @@ export const MovieStyle = styled.div`
     }
 
     &:hover {
+      
       background: #724fd8;
-      transform: scale(0.95);
     }
   }
 
