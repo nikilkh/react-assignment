@@ -32,7 +32,8 @@ export const SearchBoxStyle = styled.div`
     position: absolute;
     top: 0px;
     right: 0px;
-    margin-right: 5px;
+    padding-left: 16px;
+    padding-right: 16px;
     cursor: pointer;
   }
 `;
