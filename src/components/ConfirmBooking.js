@@ -30,9 +30,9 @@ export const ConfirmBooking = (props) => {
           <h3>Seats:</h3>
           <div>
             {props.selectedSeats.length <= 3 ? (
-              <h1>{props.confirmedSeats}</h1>
+              <h1>{props.selectedSeats.join(",")}</h1>
             ) : (
-              <h2>{props.confirmedSeats}</h2>
+              <h2>{props.selectedSeats.join(",")}</h2>
             )}
           </div>
 

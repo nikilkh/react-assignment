@@ -13,7 +13,7 @@ import {
   SeatStyle,
   SittingSeatStyle,
 } from "../styles/BookingPage.styled";
-import {ConfirmBooking} from "./ConfirmBooking";
+import { ConfirmBooking } from "./ConfirmBooking";
 
 export const BookingPage = () => {
   const [selectedSeats, setSelectedSeats] = useState([]);
@@ -34,31 +34,31 @@ export const BookingPage = () => {
       });
       setSelectedSeats(newSelectedSeats);
     } else if (selectedSeats.length < 10) {
-      setSelectedSeats(() => [...selectedSeats, id]);
-    } else alert("you can not select more than 10 seats");
+      setSelectedSeats([...selectedSeats, id]);
+    }
   };
 
   const confirmBooking = () => {
-    localStorage.setItem(location.state.movie.id, selectedSeats);
-    setConfirmedSeats(
-      localStorage.getItem(location.state.movie.id).split(",").join(", ")
-    );
-    setModalVisible(true);
-    setBookingHomeVisible(false);
+    setConfirmedSeats([...confirmedSeats, ...selectedSeats]);
+    localStorage.setItem(location.state.movie.id, confirmedSeats.join(","));
+    if (selectedSeats.length > 0) {
+      setModalVisible(true);
+      setBookingHomeVisible(false);
+    } else {
+      alert("select minimum 1 seat");
+    }
   };
 
   const closeModal = () => {
     setModalVisible(false);
     setBookingHomeVisible(true);
+    setSelectedSeats([]);
   };
 
   useEffect(() => {
     if (localStorage.getItem(location.state.movie.id) !== null) {
-      setSelectedSeats(
-        localStorage.getItem(location.state.movie.id).split(",")
-      );
       setConfirmedSeats(
-        localStorage.getItem(location.state.movie.id).split(",").join("")
+        localStorage.getItem(location.state.movie.id).split(",")
       );
     }
   }, []);
