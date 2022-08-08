@@ -90,19 +90,19 @@ export const BookingPage = () => {
                 {seats.data.map((seatNumber) => {
                   return (
                     <>
-                      <SittingSeatStyle
-                        onClick={() => {
-                          handleSeatClick(item + seatNumber);
-                        }}
-                      >
+                        
+                      
                         {confirmedSeats.includes(item + seatNumber) ? (
                           <img src={greySeat} alt="seat" />
                         ) : selectedSeats.includes(item + seatNumber) ? (
-                          <img src={blueSeat} alt="seat" />
+                          <img onClick={() => {
+                            handleSeatClick(item + seatNumber);
+                          }} src={blueSeat} alt="seat" />
                         ) : (
-                          <img src={whiteSeat} alt="seat" />
+                          <img onClick={() => {
+                            handleSeatClick(item + seatNumber);
+                          }} src={whiteSeat} alt="seat" />
                         )}
-                      </SittingSeatStyle>
                     </>
                   );
                 })}
