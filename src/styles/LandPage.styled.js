@@ -43,7 +43,7 @@ export const MoviesContainerStyle = styled.div`
   flex-wrap: wrap;
   margin-top: 60px;
   margin-bottom: 60px;
-  width: 90%;
+  width: 1024px;
   height: max-content;
   row-gap: 48px;
   column-gap: 75px;
@@ -62,7 +62,7 @@ export const MovieStyle = styled.div`
   justify-content: center;
   align-items: center;
   row-gap: 53.52px;
-  box-shadow: 10px 10px 20px #888888;
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.25);
   z-index: 0;
   background-image: url(${(props) => props.bg});
   background-size: cover;
