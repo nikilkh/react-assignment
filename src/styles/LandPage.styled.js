@@ -9,7 +9,7 @@ export const LandPageStyle = styled.div`
 
 export const HeaderStyle = styled.header`
   h1 {
-    font-family: "Roboto Mono", monospace;
+    font-family: "Roboto Mono";
     font-size: 48px;
     font-weight: 500;
   }
@@ -75,7 +75,7 @@ export const MovieStyle = styled.div`
     top: 0px;
     left: 0px;
     background-color: #62626299;
-    opacity: 0.6;
+    opacity: 0.8;
     z-index: 1;
   }
 
