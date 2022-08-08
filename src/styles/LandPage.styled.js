@@ -43,7 +43,7 @@ export const MoviesContainerStyle = styled.div`
   flex-wrap: wrap;
   margin-top: 60px;
   margin-bottom: 60px;
-  width: 1024px;
+  width: 70%;
   height: max-content;
   row-gap: 48px;
   column-gap: 75px;
@@ -120,7 +120,6 @@ export const MovieStyle = styled.div`
     }
 
     &:hover {
-      
       background: #724fd8;
     }
   }
