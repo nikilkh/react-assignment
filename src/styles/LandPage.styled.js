@@ -43,12 +43,22 @@ export const MoviesContainerStyle = styled.div`
   flex-wrap: wrap;
   margin-top: 60px;
   margin-bottom: 60px;
-  width: 70%;
+  width: 1440px;
   height: max-content;
   row-gap: 48px;
   column-gap: 75px;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (max-width: 600px) {
+    width: auto;
+  }
+  @media only screen and (max-width: 768px) {
+    width: auto;
+  }
+  @media only screen and (max-width: 1024px) {
+    width: auto;
+  }
 `;
 
 export const MovieStyle = styled.div`
