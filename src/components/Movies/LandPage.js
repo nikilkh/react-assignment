@@ -13,9 +13,8 @@ import searchIcon from "../SVGs/searchIcon.svg";
 export const LandPage = () => {
   const states = useContext(Context);
   const API_KEY = process.env.REACT_APP_API_KEY;
+  const API_URL = process.env.REACT_APP_API_URL;
   const BASE_URL = "https://api.themoviedb.org/3";
-  const API_URL =
-    BASE_URL + "/discover/movie?sort_by=popularity.desc&" + API_KEY;
   const SEARCH_URL = BASE_URL + "/search/movie?" + API_KEY + "&query=";
 
   console.log(API_URL);
