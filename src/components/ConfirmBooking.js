@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import {
+  CloseButtonStyle,
   ConfirmModalStyle,
   ModalCloseStyle,
   ModalImageStyle,
@@ -13,7 +14,9 @@ export const ConfirmBooking = (props) => {
   return (
     <ConfirmModalStyle>
       <ModalCloseStyle>
-        <button onClick={props.closeModal}>X</button>
+        <CloseButtonStyle onClick={props.closeModal}>
+          X
+        </CloseButtonStyle>
       </ModalCloseStyle>
       <h1>Thank you for booking</h1>
       <h5>Order summary</h5>

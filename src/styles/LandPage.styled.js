@@ -26,16 +26,17 @@ export const SearchBoxStyle = styled.div`
       color: white;
     }
   }
-  button {
-    all: unset;
-    height: 50px;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    padding-left: 16px;
-    padding-right: 16px;
-    cursor: pointer;
-  }
+`;
+
+export const SearchIconButtonStyle = styled.button`
+  all: unset;
+  height: 50px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+  cursor: pointer;
 `;
 
 export const MoviesContainerStyle = styled.div`
@@ -110,30 +111,6 @@ export const MovieStyle = styled.div`
     }
   }
 
-  button {
-    all: unset;
-    display: none;
-    background-color: #352c9a;
-    font-family: "Rubik", sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    color: white;
-    padding: 12px 34px;
-    cursor: pointer;
-
-    &:active {
-      text-decoration: underline;
-    }
-
-    &:disabled {
-      background: #626262;
-    }
-
-    &:hover {
-      background: #724fd8;
-    }
-  }
-
   &:hover h3 {
     display: block;
     z-index: 2;
@@ -142,5 +119,29 @@ export const MovieStyle = styled.div`
   &:hover button {
     display: block;
     z-index: 2;
+  }
+`;
+
+export const BookNowButtonStyle = styled.button`
+  all: unset;
+  display: none;
+  background-color: #352c9a;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  padding: 12px 34px;
+  cursor: pointer;
+
+  &:active {
+    text-decoration: underline;
+  }
+
+  &:disabled {
+    background: #626262;
+  }
+
+  &:hover {
+    background: #724fd8;
   }
 `;

@@ -8,6 +8,7 @@ import {
   AllSeatsStyle,
   BookingPageFlex,
   BookingPageStyle,
+  ConfirmBookingButtonStyle,
   LetterSeatStyle,
   RowSeatStyle,
   ScreenStyle,
@@ -120,8 +121,9 @@ export const BookingPage = () => {
               );
             })}
           </AllSeatsStyle>
-
-          <button onClick={confirmBooking}>Confirm Booking</button>
+          <ConfirmBookingButtonStyle onClick={confirmBooking}>
+            Confirm Booking
+          </ConfirmBookingButtonStyle>
         </BookingPageFlex>
       </BookingPageStyle>
 

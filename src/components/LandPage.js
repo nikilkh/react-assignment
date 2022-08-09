@@ -2,6 +2,7 @@ import {
   HeaderStyle,
   LandPageStyle,
   SearchBoxStyle,
+  SearchIconButtonStyle,
 } from "../styles/LandPage.styled";
 import { useContext, useEffect } from "react";
 import Context from "./context";
@@ -64,13 +65,13 @@ export const LandPage = () => {
             states.setInput(e.target.value);
           }}
         ></input>
-        <button
+        <SearchIconButtonStyle
           onClick={(e) => {
             handleSearchClick(e);
           }}
         >
           <img src={searchIcon} alt="search icon"></img>
-        </button>
+        </SearchIconButtonStyle>
       </SearchBoxStyle>
       {states.noResult ? <NoResult /> : <MoviesContainer />}
     </LandPageStyle>
