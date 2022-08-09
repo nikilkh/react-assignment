@@ -12,13 +12,13 @@ import searchIcon from "../SVGs/searchIcon.svg";
 
 export const LandPage = () => {
   const states = useContext(Context);
-
-  const API_KEY = "api_key=0decbb49ed9b3d0c6017d7721a14c106";
+  const API_KEY = process.env.REACT_APP_API_KEY;
   const BASE_URL = "https://api.themoviedb.org/3";
   const API_URL =
     BASE_URL + "/discover/movie?sort_by=popularity.desc&" + API_KEY;
-  const searchURL = BASE_URL + "/search/movie?" + API_KEY + "&query=";
+  const SEARCH_URL = BASE_URL + "/search/movie?" + API_KEY + "&query=";
 
+  console.log(API_URL);
   const getMovie = async (url) => {
     states.setNoResult(false);
     states.setShowMovies(false);
@@ -44,7 +44,7 @@ export const LandPage = () => {
     if (states.input.length === 0) {
       getMovie(API_URL);
     } else {
-      getMovie(searchURL + states.input);
+      getMovie(SEARCH_URL + states.input);
     }
   };
 
@@ -55,7 +55,7 @@ export const LandPage = () => {
   return (
     <LandPageStyle>
       <HeaderStyle>
-        <h1>Movie List</h1>
+        <h1>Book Tickets</h1>
       </HeaderStyle>
       <SearchBoxStyle>
         <input
