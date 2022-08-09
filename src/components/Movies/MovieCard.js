@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { BookNowButtonStyle } from "../styles/LandPage.styled";
+import { BookNowButtonStyle } from "../../styles/LandPage.styled";
 
 export const MovieCard = (props) => {
   let navigate = useNavigate();

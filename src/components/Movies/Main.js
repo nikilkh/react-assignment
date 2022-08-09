@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Context from "./components/context";
-import { LandPage } from "./components/LandPage";
+import Context from "../context";
+import { LandPage } from "./LandPage";
 
 export const Main = () => {
   const [movies, setMovies] = useState([]);

@@ -5,7 +5,7 @@ import {
   ModalCloseStyle,
   ModalImageStyle,
   PriceDetailsStyle,
-} from "../styles/BookingPage.styled";
+} from "../../styles/BookingPage.styled";
 
 export const ConfirmBooking = (props) => {
   const IMG_URL = "https://image.tmdb.org/t/p/w500";

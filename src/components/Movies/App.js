@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Main } from "../Main";
-import {BookingPage} from "./BookingPage";
+import { Main } from "./Main";
+import {BookingPage} from "../Tickets/BookingPage";
 
 export const App = () => {
   return (

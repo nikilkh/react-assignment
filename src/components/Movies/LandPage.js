@@ -3,12 +3,12 @@ import {
   LandPageStyle,
   SearchBoxStyle,
   SearchIconButtonStyle,
-} from "../styles/LandPage.styled";
+} from "../../styles/LandPage.styled";
 import { useContext, useEffect } from "react";
-import Context from "./context";
+import Context from "../context";
 import { MoviesContainer } from "./MoviesContainer";
 import { NoResult } from "./NoResult";
-import searchIcon from "../components/searchIcon.svg";
+import searchIcon from "../SVGs/searchIcon.svg";
 
 export const LandPage = () => {
   const states = useContext(Context);

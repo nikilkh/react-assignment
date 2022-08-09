@@ -1,5 +1,5 @@
-import { NoResultStyle } from "../styles/NoResult.styled";
-import noResult from "./noResult.svg";
+import { NoResultStyle } from "../../styles/NoResult.styled";
+import noResult from "../SVGs/noResult.svg";
 
 export const NoResult = () => {
   return (

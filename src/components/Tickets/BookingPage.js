@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import screen from "./screen.svg";
-import whiteSeat from "./whiteSeat.svg";
-import greySeat from "./greySeat.svg";
-import blueSeat from "./blueSeat.svg";
+import screen from "../SVGs/screen.svg";
+import whiteSeat from "../SVGs/whiteSeat.svg";
+import greySeat from "../SVGs/greySeat.svg";
+import blueSeat from "../SVGs/blueSeat.svg";
 import {
   AllSeatsStyle,
   BookingPageFlex,
@@ -14,9 +14,9 @@ import {
   ScreenStyle,
   SeatNumberStyle,
   SeatStyle,
-} from "../styles/BookingPage.styled";
+} from "../../styles/BookingPage.styled";
 import { ConfirmBooking } from "./ConfirmBooking";
-import { GlobalStyle } from "../styles/Global.styled";
+import { GlobalStyle } from "../../styles/Global.styled";
 
 export const BookingPage = () => {
   const [selectedSeats, setSelectedSeats] = useState([]);
