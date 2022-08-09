@@ -42,8 +42,12 @@ export const BookingPage = () => {
   };
 
   const confirmBooking = () => {
-    setConfirmedSeats([...confirmedSeats, ...selectedSeats]);
-    localStorage.setItem(location.state.movie.id, confirmedSeats.join(","));
+    setConfirmedSeats((prevSeats) => [...prevSeats, ...selectedSeats]);
+    console.log(confirmedSeats, selectedSeats);
+    localStorage.setItem(
+      location.state.movie.id,
+      [...confirmedSeats, ...selectedSeats].join(",")
+    );
     if (selectedSeats.length > 0) {
       setModalVisible(true);
       setBookingHomeVisible(false);
@@ -59,12 +63,12 @@ export const BookingPage = () => {
   };
 
   useEffect(() => {
-    if (localStorage.getItem(location.state.movie.id) !== null) {
+    if (localStorage.getItem(location.state.movie.id)) {
       setConfirmedSeats(
         localStorage.getItem(location.state.movie.id).split(",")
       );
     }
-  }, []);
+  }, [location]);
 
   return (
     <>
