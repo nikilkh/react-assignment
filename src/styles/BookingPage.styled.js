@@ -98,6 +98,8 @@ export const ModalImageStyle = styled.div`
     height: 326.35px;
     width: 200px;
     border-radius: 20px;
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.25);
+
   }
 `;
 export const PriceDetailsStyle = styled.div`
