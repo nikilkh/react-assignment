@@ -49,24 +49,18 @@ export const RowSeatStyle = styled.div`
 export const ConfirmModalStyle = styled.div`
   width: 640px;
   height: 578px;
-  position: fixed;
+  position: absolute;
   top: 179px;
   left: 600px;
   background-color: #ffffff;
   border-radius: 20px;
   font-family: "Rubik", sans-serif;
+`;
 
-  h1 {
-    text-align: center;
-    font-family: "Rubik", sans-serif;
-    font-size: 40px;
-  }
-
-  h5 {
-    text-align: center;
-    font-family: "Rubik", sans-serif;
-    font-size: 18px;
-  }
+export const ModalFlexMainStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: auto 52px;
 `;
 
 export const ModalCloseStyle = styled.div`
@@ -74,30 +68,49 @@ export const ModalCloseStyle = styled.div`
   justify-content: end;
 `;
 
+export const ModalHeadingStyle = styled.header`
+  text-align: center;
+  margin: auto;
+
+  h1 {
+    font-family: "Rubik", sans-serif;
+    font-size: 40px;
+    margin: 0px 0px 39px 0px;
+  }
+
+  h5 {
+    font-family: "Rubik", sans-serif;
+    font-size: 18px;
+    margin: 0px 0px 48px 0px;
+  }
+`;
+
+export const ImageAndPrice = styled.div`
+  display: flex;
+`;
+
 export const ModalImageStyle = styled.div`
-  height: 326.35px;
-  width: 200px;
-  border-radius: 20px;
-  margin-left: 52px;
   margin-right: 134px;
 
   img {
-    height: 100%;
-    width: auto;
-    border-radius: 10px;
+    height: 326.35px;
+    width: 200px;
+    border-radius: 20px;
   }
 `;
 export const PriceDetailsStyle = styled.div`
-  margin-right: 52px;
-  margin-bottom: 50px;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  margin: auto;
 
-  h1,
-  h2 {
-    display: inline;
+  div:nth-child(2) {
+    word-break: break-all;
+    h1 {
+      margin: auto;
+    }
+    h2 {
+      margin: auto;
+    }
   }
-
   div:nth-child(3) {
     display: flex;
     justify-content: space-between;
@@ -105,10 +118,13 @@ export const PriceDetailsStyle = styled.div`
   div:nth-child(4) {
     display: flex;
     justify-content: space-between;
+    font-size: 12px;
   }
   div:nth-child(5) {
     display: flex;
     justify-content: space-between;
+    font-size: 12px;
+
     border-bottom: 2px solid black;
   }
   div:nth-child(6) {
@@ -145,8 +161,8 @@ export const ConfirmBookingButtonStyle = styled.button`
 
 export const CloseButtonStyle = styled.button`
   all: unset;
-  font-size: x-large;
+  font-size: large;
   cursor: pointer;
   margin-top: 5px;
-  margin-right: 5px;
+  margin-right: 10px;
 `;

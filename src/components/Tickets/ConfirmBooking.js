@@ -2,7 +2,10 @@ import { useLocation } from "react-router-dom";
 import {
   CloseButtonStyle,
   ConfirmModalStyle,
+  ImageAndPrice,
   ModalCloseStyle,
+  ModalFlexMainStyle,
+  ModalHeadingStyle,
   ModalImageStyle,
   PriceDetailsStyle,
 } from "../../styles/BookingPage.styled";
@@ -12,16 +15,16 @@ export const ConfirmBooking = (props) => {
   let location = useLocation();
 
   return (
+
     <ConfirmModalStyle>
       <ModalCloseStyle>
-        <CloseButtonStyle onClick={props.closeModal}>
-          X
-        </CloseButtonStyle>
+        <CloseButtonStyle onClick={props.closeModal}>X</CloseButtonStyle>
       </ModalCloseStyle>
-      <h1>Thank you for booking</h1>
-      <h5>Order summary</h5>
-
-      <div style={{ display: "flex" }}>
+      <ModalFlexMainStyle>
+      
+      <ModalHeadingStyle><h1>Thank you for booking</h1></ModalHeadingStyle>
+      <ModalHeadingStyle><h5>Order Summary</h5></ModalHeadingStyle>
+      <ImageAndPrice>
         <ModalImageStyle>
           <img
             src={IMG_URL + location.state.movie.poster_path}
@@ -64,7 +67,9 @@ export const ConfirmBooking = (props) => {
             </h5>
           </div>
         </PriceDetailsStyle>
-      </div>
+      </ImageAndPrice>
+      </ModalFlexMainStyle>
+      
     </ConfirmModalStyle>
   );
 };
