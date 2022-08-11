@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const BookingPageStyle = styled.div`
-  width: 100%;
+  width: fit-content;
+  margin: auto;
   background: ${(props) =>
     props.bookingHomeVisible ? "white" : "rgba(229, 229, 229, 0.6)"};
   pointer-events: ${(props) => (props.bookingHomeVisible ? "all" : "none")};
@@ -50,6 +51,7 @@ export const ConfirmModalStyle = styled.div`
   width: 640px;
   height: 578px;
   position: absolute;
+  margin: auto;
   top: 179px;
   left: 600px;
   background-color: #ffffff;
