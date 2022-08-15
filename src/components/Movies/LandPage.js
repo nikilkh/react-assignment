@@ -17,7 +17,6 @@ export const LandPage = () => {
   const BASE_URL = "https://api.themoviedb.org/3";
   const SEARCH_URL = BASE_URL + "/search/movie?" + API_KEY + "&query=";
 
-  console.log(API_URL);
   const getMovie = async (url) => {
     states.setNoResult(false);
     states.setShowMovies(false);
