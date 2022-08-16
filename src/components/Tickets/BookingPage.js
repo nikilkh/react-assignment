@@ -43,7 +43,6 @@ export const BookingPage = () => {
 
   const confirmBooking = () => {
     setConfirmedSeats((prevSeats) => [...prevSeats, ...selectedSeats]);
-    console.log(confirmedSeats, selectedSeats);
     localStorage.setItem(
       location.state.movie.id,
       [...confirmedSeats, ...selectedSeats].join(",")
