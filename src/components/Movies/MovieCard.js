@@ -11,7 +11,7 @@ export const MovieCard = (props) => {
   return (
     <>
       <h3>{props.movie.title}</h3>
-      <Button onclick={handleBookNow} buttonName="Book Now"></Button>
+      <Button onClick={handleBookNow} buttonName="Book Now"></Button>
     </>
   );
 };
