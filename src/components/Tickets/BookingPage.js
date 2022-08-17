@@ -8,7 +8,6 @@ import {
   AllSeatsStyle,
   BookingPageFlex,
   BookingPageStyle,
-  ConfirmBookingButtonStyle,
   LetterSeatStyle,
   RowSeatStyle,
   ScreenStyle,
@@ -17,6 +16,7 @@ import {
 } from "../../styles/BookingPage.styled";
 import { ConfirmBooking } from "./ConfirmBooking";
 import { GlobalStyle } from "../../styles/Global.styled";
+import { Button } from "../Button/Button";
 
 export const BookingPage = () => {
   const [selectedSeats, setSelectedSeats] = useState([]);
@@ -124,9 +124,11 @@ export const BookingPage = () => {
               );
             })}
           </AllSeatsStyle>
-          <ConfirmBookingButtonStyle onClick={confirmBooking}>
-            Confirm Booking
-          </ConfirmBookingButtonStyle>
+
+          <Button
+            onClick={confirmBooking}
+            buttonName="Confirm Booking"
+          ></Button>
         </BookingPageFlex>
       </BookingPageStyle>
 

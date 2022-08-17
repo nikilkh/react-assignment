@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ButtonStyle } from "../components/Button/Button.styled";
 
 export const LandPageStyle = styled.div`
   display: flex;
@@ -78,6 +79,10 @@ export const MovieStyle = styled.div`
   background-image: url(${(props) => props.bg});
   background-size: cover;
 
+  ${ButtonStyle} {
+    display: none;
+  }
+
   :hover:after {
     content: "";
     position: absolute;
@@ -119,29 +124,5 @@ export const MovieStyle = styled.div`
   &:hover button {
     display: block;
     z-index: 2;
-  }
-`;
-
-export const BookNowButtonStyle = styled.button`
-  all: unset;
-  display: none;
-  background-color: #352c9a;
-  font-family: "Rubik", sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: white;
-  padding: 12px 34px;
-  cursor: pointer;
-
-  &:active {
-    text-decoration: underline;
-  }
-
-  &:disabled {
-    background: #626262;
-  }
-
-  &:hover {
-    background: #724fd8;
   }
 `;

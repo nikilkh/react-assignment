@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { BookNowButtonStyle } from "../../styles/LandPage.styled";
+import { Button } from "../Button/Button";
 
 export const MovieCard = (props) => {
   let navigate = useNavigate();
@@ -11,7 +11,7 @@ export const MovieCard = (props) => {
   return (
     <>
       <h3>{props.movie.title}</h3>
-      <BookNowButtonStyle onClick={handleBookNow}>Book Now</BookNowButtonStyle>
+      <Button onclick={handleBookNow} buttonName="Book Now"></Button>
     </>
   );
 };
